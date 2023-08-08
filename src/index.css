@@ -1,0 +1,33 @@
+body {
+  background-color: #000;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 98vh;
+  opacity: 0.7;
+}
+
+.subsecond {
+  color: yellow;
+}
+
+.hour,
+.minute {
+  color: #fff;
+}
+
+.tick-hour {
+  color: #bbb;
+}
+
+.tick-minutes {
+  color: #777;
+}
+
+.second {
+  color: #c00;
+}

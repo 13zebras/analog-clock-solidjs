@@ -18,14 +18,16 @@ export const ClockFace: Component<ClockFaceProps> = (props) => (
   <svg viewBox="0 0 200 200" width="95vh">
     <g transform="translate(100, 100)">
       {/* static */}
-      <circle class="text-neutral-900" r="99" fill="#020409" stroke="currentColor" />
+      <circle class="text-neutral-900" r="99" fill="#000" stroke="currentColor" />
       <Lines numberOfLines={60} class="tick-minutes" length={2} width={1} />
       <Lines numberOfLines={12} class="tick-hour" length={5} width={2} />
       {/* dynamic */}
 
-      <Hand rotate={props.hour} class="hour" length={40} width={4} />
-      <Hand rotate={props.minute} class="minute" length={70} width={3} />
+      <Hand rotate={props.hour} class="hour" length={40} width={5} />
+      <Hand rotate={props.minute} class="minute" length={70} width={4} />
       <Hand rotate={props.second} class="second" length={80} width={1} />
+
+      <circle class="text-neutral-900" r="1.6" fill="#000" stroke="#000" />
     </g>
   </svg>
 );

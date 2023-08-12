@@ -3,6 +3,7 @@ import { createSignal, onCleanup } from 'solid-js';
 
 import { Hand } from './Hand';
 import { Lines } from './Lines';
+import { SecondHand } from './SecondHand';
 import { createAnimationLoop } from './utils';
 
 const getSecondsSinceMidnight = (): number => (Date.now() - new Date().setHours(0, 0, 0, 0)) / 1000;
@@ -23,9 +24,9 @@ export const ClockFace: Component<ClockFaceProps> = (props) => (
       <Lines numberOfLines={12} class="tick-hour" length={5} width={2} />
       {/* dynamic */}
 
-      <Hand rotate={props.hour} class="hour" length={40} width={5} />
-      <Hand rotate={props.minute} class="minute" length={70} width={4} />
-      <Hand rotate={props.second} class="second" length={80} width={1} />
+      <Hand rotate={props.hour} class="hour" length={45} width={5} />
+      <Hand rotate={props.minute} class="minute" length={85} width={4} />
+      <SecondHand rotate={props.second} class="second" length={95} width={3} />
 
       <circle class="text-neutral-900" r="1.6" fill="#000" stroke="#000" />
     </g>

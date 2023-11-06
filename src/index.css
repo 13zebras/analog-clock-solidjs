@@ -1,5 +1,5 @@
 body {
-  background-color: #050109;
+  background-color: #000;
 }
 
 .clock {
@@ -8,8 +8,40 @@ body {
   align-items: center;
   flex-wrap: wrap;
   height: 95vh;
-  opacity: 0.7;
   overflow: hidden;
+}
+
+.clockface {
+  opacity: 1.0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.dimmed {
+  opacity: 0.4;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.dimmer-btn {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  z-index: 100;
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  color: #ccc;
+  background-color: #101016;
+  border: 1px solid #323237;
+  opacity: 0.4;
+  transform: scale(0.8);
+  transition: opacity 0.25s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.dimmer-btn:hover {
+  opacity: 0.7;
+  transform: scale(0.9);
+  transition: opacity 0.25s ease-in-out, transform 0.1s ease-in-out;
+
 }
 
 .subsecond {
@@ -18,7 +50,7 @@ body {
 
 .hour,
 .minute {
-  color: #fff;
+  color: #ddd;
 }
 
 .tick-hour {
@@ -26,9 +58,9 @@ body {
 }
 
 .tick-minutes {
-  color: #777;
+  color: #888;
 }
 
 .second {
-  color: #b02;
+  color: #d03;
 }

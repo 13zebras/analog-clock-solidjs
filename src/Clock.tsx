@@ -6,7 +6,7 @@ import { Lines } from './Lines';
 import { SecondHand } from './SecondHand';
 import { createAnimationLoop } from './utils';
 
-const getSecondsSinceMidnight = (): number => (Date.now() - new Date().setHours(0, 0, 0, 0)) / 1000 - 3600;
+const getSecondsSinceMidnight = (): number => (Date.now() - new Date().setHours(0, 0, 0, 0)) / 1000;
 
 type ClockFaceProps = {
   hour: string;

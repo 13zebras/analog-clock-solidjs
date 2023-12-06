@@ -12,27 +12,27 @@ type ClockFaceProps = {
   hour: string;
   minute: string;
   second: string;
- 
+
 };
 
 export const ClockFace: Component<ClockFaceProps> = (props) => (
-  <div class="clockface">
-  <svg viewBox="0 0 200 200" width="95vh">
-    <g transform="translate(100, 100)">
-      {/* static */}
-      <circle class="text-neutral-900" r="99" fill="#000" stroke="currentColor" />
-      <Lines numberOfLines={60} class="tick-minutes" length={2} width={1} />
-      <Lines numberOfLines={12} class="tick-hour" length={5} width={2} />
-      {/* dynamic */}
+  <div id="clockface">
+    <svg viewBox="0 0 200 200" width="95vh">
+      <g transform="translate(100, 100)">
+        {/* static */}
+        <circle r="99" fill="#000" stroke="currentColor" />
+        <Lines numberOfLines={60} class="tick-minutes" length={2} width={1} />
+        <Lines numberOfLines={12} class="tick-hour" length={5} width={2} />
+        {/* dynamic */}
 
-      <Hand rotate={props.hour} class="hour" length={45} width={4} />
-      <Hand rotate={props.minute} class="minute" length={85} width={3} />
-      <SecondHand rotate={props.second} class="second" length={6} width={3} />
+        <Hand rotate={props.hour} class="hour" length={45} width={4} />
+        <Hand rotate={props.minute} class="minute" length={85} width={3} />
+        <SecondHand rotate={props.second} class="second" length={6} width={3} />
 
-      <circle class="text-neutral-900" r="1.6" fill="#000" stroke="#000" />
-    </g>
-  </svg>
-</div>
+        <circle r="3.1" fill="#300" stroke="#300" />
+      </g>
+    </svg>
+  </div>
 );
 
 export const Dimmer: Component = () => (
@@ -45,7 +45,24 @@ export const Dimmer: Component = () => (
   >
     Dimmer
   </button>
-)
+);
+
+export const DimmerBtns: Component = () => (
+  // create plus and minus buttons to raise and lower opacity of clock
+  <button class="plus-btn"
+    onClick={() => {
+      const clock = document.querySelector('.clockface');
+      if (clock) {
+        // if clock opacity is < 0.7, increase by 0.3
+        // if clock opacity is > 0.7, increase to 1.0
+
+      }
+    }}
+  >
+    +
+  </button>
+
+);
 
 export const Clock: Component = () => {
   const [time, setTime] = createSignal<number>(getSecondsSinceMidnight());
@@ -62,7 +79,7 @@ export const Clock: Component = () => {
   const hour = () => rotate(((time() / 60 / 60) % 12) / 12);
 
   return (
-    <div class="clock">
+    <div id="clock">
       <ClockFace hour={hour()} minute={minute()} second={second()} />
       <Dimmer />
     </div>

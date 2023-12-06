@@ -2,7 +2,7 @@ body {
   background-color: #000;
 }
 
-.clock {
+#clock {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@ body {
   overflow: hidden;
 }
 
-.clockface {
+#clockface {
   opacity: 1.0;
   transition: opacity 0.5s ease-in-out;
 }

@@ -39,7 +39,7 @@ export const Dimmer: Component = () => (
   // button to set opacity of clock
   <button class="dimmer-btn"
     onClick={() => {
-      const clock = document.querySelector('.clockface');
+      const clock = document.querySelector('#clockface');
       if (clock) clock.classList.toggle('dimmed');
     }}
   >

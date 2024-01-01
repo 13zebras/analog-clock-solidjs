@@ -1,5 +1,42 @@
+:root {
+  --gradient-blue: linear-gradient(90deg, #01f, #00a, #50a, #70f);
+  --gradient-rainbow: linear-gradient(90deg, red, rgb(255, 100, 0), orange, yellow, rgb(0, 180, 0), rgb(0, 70, 255), indigo, rgb(63, 0, 97));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #000;
+}
+
+.animate-bg {
+  background: #000;
+  background-size: 400%;
+  background-image: var(--gradient-blue);
+  animation: bg-animation 25s infinite;
+  opacity: 0.07;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left
+  }
+
+  50% {
+    background-position: right
+  }
+
+  100% {
+    background-position: left
+  }
 }
 
 #clock {
@@ -7,7 +44,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 95vh;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
 }
 
@@ -63,4 +101,44 @@ body {
 
 .second {
   color: #d03;
+}
+
+
+
+.title {
+  margin: 0 0 .5em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+  color: #ee6352;
+  line-height: .8;
+  margin: 0;
+
+  background-image: var(--gradient);
+  background-clip: text;
+  color: transparent;
+  /* display: inline-block; */
+  background-size: 300%;
+  transition: background-position 1s;
+}
+
+.title:hover {
+  background-position: right;
+}
+
+
+.fun {
+  color: white;
+  border: 0;
+  cursor: pointer;
+  padding: .5em 1.25em;
+  background: linear-gradient(90deg, #ee6352, purple, #ee6352);
+  background-size: 300%;
+  background-position: left;
+  transition: background-position 350ms;
+}
+
+.fun:hover {
+  background-position: right;
 }

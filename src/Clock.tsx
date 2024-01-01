@@ -20,7 +20,7 @@ export const ClockFace: Component<ClockFaceProps> = (props) => (
     <svg viewBox="0 0 200 200" width="95vh">
       <g transform="translate(100, 100)">
         {/* static */}
-        <circle r="99" fill="#000" stroke="currentColor" />
+        <circle r="99" fill="transparent" stroke="currentColor" />
         <Lines numberOfLines={60} class="tick-minutes" length={2} width={1} />
         <Lines numberOfLines={12} class="tick-hour" length={5} width={2} />
         {/* dynamic */}
@@ -79,9 +79,12 @@ export const Clock: Component = () => {
   const hour = () => rotate(((time() / 60 / 60) % 12) / 12);
 
   return (
-    <div id="clock">
-      <ClockFace hour={hour()} minute={minute()} second={second()} />
-      <Dimmer />
-    </div>
+    <>
+      <div class="animate-bg"></div>
+      <div id="clock">
+        <ClockFace hour={hour()} minute={minute()} second={second()} />
+        <Dimmer />
+      </div>
+    </>
   );
 };

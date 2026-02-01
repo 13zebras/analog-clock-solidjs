@@ -1,144 +1,158 @@
 :root {
-  --gradient-blue: linear-gradient(90deg, #01f, #00a, #50a, #70f);
-  --gradient-rainbow: linear-gradient(90deg, red, rgb(255, 100, 0), orange, yellow, rgb(0, 180, 0), rgb(0, 70, 255), indigo, rgb(63, 0, 97));
+	--gradient-blue: linear-gradient(90deg, #01f, #00a, #50a, #70f);
+	--gradient-rainbow: linear-gradient(
+		90deg,
+		red,
+		rgb(255, 100, 0),
+		orange,
+		yellow,
+		rgb(0, 180, 0),
+		rgb(0, 70, 255),
+		indigo,
+		rgb(63, 0, 97)
+	);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  background-color: #000;
+	background-color: #000;
 }
 
 .animate-bg {
-  background: #000;
-  background-size: 400%;
-  background-image: var(--gradient-blue);
-  animation: bg-animation 25s infinite;
-  opacity: 0.07;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
+	background: #000;
+	background-size: 400%;
+	background-image: var(--gradient-blue);
+	animation: bg-animation 25s infinite;
+	opacity: 0.03;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
 }
 
 @keyframes bg-animation {
-  0% {
-    background-position: left
-  }
+	0% {
+		background-position: left;
+	}
 
-  50% {
-    background-position: right
-  }
+	50% {
+		background-position: right;
+	}
 
-  100% {
-    background-position: left
-  }
+	100% {
+		background-position: left;
+	}
 }
 
 #clock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
 }
 
 #clockface {
-  opacity: 1.0;
-  transition: opacity 0.5s ease-in-out;
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out;
 }
 
 #clockface.dimmed {
-  opacity: 0.4;
-  transition: opacity 0.5s ease-in-out;
+	opacity: 0.4;
+	transition: opacity 0.5s ease-in-out;
+}
+
+#clockface.dimmed_02 {
+	opacity: 0.2;
+	transition: opacity 0.5s ease-in-out;
 }
 
 .dimmer-btn {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  z-index: 100;
-  width: 80px;
-  height: 25px;
-  border-radius: 5px;
-  color: #ccc;
-  background-color: #101016;
-  border: 1px solid #323237;
-  opacity: 0.4;
-  transform: scale(0.8);
-  transition: opacity 0.25s ease-in-out, transform 0.1s ease-in-out;
+	position: absolute;
+	right: 115px;
+	bottom: 15px;
+	z-index: 100;
+	width: 80px;
+	height: 25px;
+	border-radius: 5px;
+	color: #ccc;
+	background-color: #101016;
+	border: 1px solid #323237;
+	opacity: 0.3;
+	transition: opacity 0.15s ease-in-out;
+}
+
+.dimmer-btn.btn-2 {
+	right: 15px;
+	bottom: 15px;
 }
 
 .dimmer-btn:hover {
-  opacity: 0.7;
-  transform: scale(0.9);
-  transition: opacity 0.25s ease-in-out, transform 0.1s ease-in-out;
-
+	opacity: 0.8;
+	transition: opacity 0.15s ease-in-out;
 }
 
 .subsecond {
-  color: yellow;
+	color: yellow;
 }
 
 .hour,
 .minute {
-  color: #ddd;
+	color: #ddd;
 }
 
 .tick-hour {
-  color: #bbb;
+	color: #bbb;
 }
 
 .tick-minutes {
-  color: #888;
+	color: #888;
 }
 
 .second {
-  color: #d03;
+	color: #d03;
 }
 
-
-
 .title {
-  margin: 0 0 .5em;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-style: italic;
-  font-size: 3rem;
-  color: #ee6352;
-  line-height: .8;
-  margin: 0;
+	margin: 0 0 0.5em;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-style: italic;
+	font-size: 3rem;
+	color: #ee6352;
+	line-height: 0.8;
+	margin: 0;
 
-  background-image: var(--gradient);
-  background-clip: text;
-  color: transparent;
-  /* display: inline-block; */
-  background-size: 300%;
-  transition: background-position 1s;
+	background-image: var(--gradient);
+	background-clip: text;
+	color: transparent;
+	/* display: inline-block; */
+	background-size: 300%;
+	transition: background-position 1s;
 }
 
 .title:hover {
-  background-position: right;
+	background-position: right;
 }
 
-
 .fun {
-  color: white;
-  border: 0;
-  cursor: pointer;
-  padding: .5em 1.25em;
-  background: linear-gradient(90deg, #ee6352, purple, #ee6352);
-  background-size: 300%;
-  background-position: left;
-  transition: background-position 350ms;
+	color: white;
+	border: 0;
+	cursor: pointer;
+	padding: 0.5em 1.25em;
+	background: linear-gradient(90deg, #ee6352, purple, #ee6352);
+	background-size: 300%;
+	background-position: left;
+	transition: background-position 350ms;
 }
 
 .fun:hover {
-  background-position: right;
+	background-position: right;
 }
